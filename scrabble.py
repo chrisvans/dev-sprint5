@@ -35,6 +35,7 @@ def all_possibilities(filename, scrabble_letters, min_num_letters, total_word_le
         ct = 0
         for x in nums_list:
             ct = ct + x
+        print list_word, nums_list, ct
         if (len(list_word) - ct) > min_num_letters and len(list_word) < total_word_length:
             d.append(word)
     return d

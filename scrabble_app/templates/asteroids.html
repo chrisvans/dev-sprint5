@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block body %}
+	<p>Asteroids</p>
+	<p>This is a work-in-progress</p>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			Results:
+			<pre>
+				{% for message in messages %}
+                    {{ message }}
+				{% endfor %}
+			</pre>
+		{% endif %}
+	{% endwith %}
+{% endblock %}
+{% block nav %}
+<li><a href="{{url_for('login')}}">back</a></li>
+{% endblock %}

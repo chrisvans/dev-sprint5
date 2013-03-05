@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block body %}
+    <h2>Triangle App</h2>
+    <p>This app will calculate whether the given three sides could form
+    a triangle.</p>
+    <p>Enter each side of the triangle to compute:</p>
+    <form action="{{url_for('triangle')}}" method="post">
+    	<input type="text" name="expressionA" />
+        <input type="text" name="expressionB" />
+        <input type="text" name="expressionC" />
+        <input type="submit" value="Input Sides" />
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            Results:
+            <pre>
+              	{% for message in messages %}
+{{message}}
+                {% endfor %}
+            </pre>
+        {% endif %}
+    {% endwith %}
+{% endblock %}
+{% block nav %}
+<li><a href="{{url_for('login')}}">back</a></li>
+{% endblock %}
